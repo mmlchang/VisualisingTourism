@@ -1,0 +1,21 @@
+Departure,Departure_Division,Destination,Destination_Division,Distance,Duration
+Bintulu Port,Bintulu,Kuching Port,Kuching,498.2,12 hrs 49 min
+Bintulu Port,Bintulu,Limbang Port,Limbang,427.8,10 hrs 59 min
+Bintulu Port,Bintulu,Miri Port,Miri,238.9,6 hrs 7 min
+Bintulu Port,Bintulu,Rajang Port (Sibu),Sibu,431.5,11 hrs 5 min
+Kuching Port,Kuching,Bintulu Port,Bintulu,498.2,12 hrs 49 min
+Kuching Port,Kuching,Limbang Port,Limbang,813,20 hrs 54 min
+Kuching Port,Kuching,Miri Port,Miri,629.7,16 hrs 12 min
+Kuching Port,Kuching,Rajang Port (Sibu),Sibu,324.1,8 hrs 20 min
+Limbang Port,Limbang,Bintulu Port,Bintulu,427.8,10 hrs 59 min
+Limbang Port,Limbang,Kuching Port,Kuching,813,20 hrs 54 min
+Limbang Port,Limbang,Miri Port,Miri,246.3,6 hrs 21 min
+Limbang Port,Limbang,Rajang Port (Sibu),Sibu,753.8,19 hrs 21 min
+Miri Port,Miri,Bintulu Port,Bintulu,238.9,6 hrs 7 min
+Miri Port,Miri,Kuching Port,Kuching,629.7,16 hrs 12 min
+Miri Port,Miri,Limbang Port,Limbang,246.3,6 hrs 21 min
+Miri Port,Miri,Rajang Port (Sibu),Sibu,568.6,14 hrs 38 min
+Rajang Port (Sibu),Sibu,Bintulu Port,Bintulu,431.5,11 hrs 5 min
+Rajang Port (Sibu),Sibu,Kuching Port,Kuching,324.1,8 hrs 20 min
+Rajang Port (Sibu),Sibu,Limbang Port,Limbang,753.8,19 hrs 21 min
+Rajang Port (Sibu),Sibu,Miri Port,Miri,568.6,14 hrs 38 min

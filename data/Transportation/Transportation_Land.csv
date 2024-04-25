@@ -1,0 +1,133 @@
+﻿Departure_Division,Destination_Division,Distance,Duration
+Kuching,Serian,61.2,1 hr 5 min
+Kuching,Samarahan,24.8,39 min
+Kuching,Sri Aman,191.9,2 hrs 36 min
+Kuching,Betong,245.8,3 hrs 10 min
+Kuching,Sarikei,348.1,4 hrs 23 min
+Kuching,Sibu,397.4,5 hrs 9 min
+Kuching,Mukah,563.4,7 hrs 3 min
+Kuching,Bintulu,618.3,7 hrs 53 min
+Kuching,Kapit,522.3,6 hrs 53 min
+Kuching,Miri,810.5,10 hrs 22 min
+Kuching,Limbang,999.4,13 hrs 7 min
+Serian,Kuching,61.2,1 hr 5 min
+Serian,Samarahan,44.3,43 min
+Serian,Sri Aman,130.7,1 hr 34 min
+Serian,Betong,184.5,2 hrs 8 min
+Serian,Sarikei,286.8,3 hrs 20 min
+Serian,Sibu,336.1,4 hrs 6 min
+Serian,Mukah,502.1,6 hrs 2 min
+Serian,Bintulu,557,6 hrs 49 min
+Serian,Kapit,461,5 hrs 56 min
+Serian,Miri,749.2,9 hrs 18 min
+Serian,Limbang,938.1,12 hrs 3 min
+Samarahan,Kuching,24.8,39 min
+Samarahan,Serian,44.3,43 min
+Samarahan,Sri Aman,184.5,2 hrs 22 min
+Samarahan,Betong,238.4,2 hrs 55 min
+Samarahan,Sarikei,340.7,4 hrs 8 min
+Samarahan,Sibu,380,4 hrs 48 min
+Samarahan,Mukah,556,6 hrs 48 min
+Samarahan,Bintulu,610.9,7 hrs 38 min
+Samarahan,Kapit,514.9,6 hrs 38 min
+Samarahan,Miri,803.1,10 hrs 8 min
+Samarahan,Limbang,992,12 hrs 53 min
+Sri Aman,Kuching,245.8,3 hrs 10 min
+Sri Aman,Serian,130.7,1 hr 34 min
+Sri Aman,Samarahan,184.5,2 hrs 22 min
+Sri Aman,Betong,72.7,1 hr
+Sri Aman,Sarikei,175,2 hrs 9 min
+Sri Aman,Sibu,224.3,2 hrs 54 min
+Sri Aman,Mukah,390.3,4 hrs 54 min
+Sri Aman,Bintulu,445.2,5 hrs 39 min
+Sri Aman,Kapit,349.2,4 hrs 39 min
+Sri Aman,Miri,637.4,8 hrs 11 min
+Sri Aman,Limbang,826.3,11hrs
+Betong,Kuching,245.8,3 hrs 10 min
+Betong,Serian,184.5,2 hrs 8 min
+Betong,Samarahan,238.4,2 hrs 55 min
+Betong,Sri Aman,72.7,1 hr
+Betong,Sarikei,110.5,1 hr 27 min
+Betong,Sibu,159.7,2 hrs 11 min
+Betong,Mukah,325.8,4 hrs 5 min
+Betong,Bintulu,380.7,4 hrs 55 min
+Betong,Kapit,284.6,3 hrs 55 min
+Betong,Miri,572.9,7 hrs 30 min
+Betong,Limbang,761.8,10 hrs 18 min
+Sarikei,Kuching,348.1,4 hrs 23 min
+Sarikei,Serian,286.8,3 hrs 20 min
+Sarikei,Samarahan,340.7,4 hrs 8 min
+Sarikei,Sri Aman,175,2 hrs 9 min
+Sarikei,Betong,110.5,1 hr 27 min
+Sarikei,Sibu,57.5,1 hr 4 min
+Sarikei,Mukah,207.5,2 hrs 54 min
+Sarikei,Bintulu,262.4,3 hrs 42 min
+Sarikei,Kapit,187.2,2 hrs 49 min
+Sarikei,Miri,454.6,6 hrs 20 min
+Sarikei,Limbang,643.5,9 hrs 3 min
+Sibu,Kuching,397.4,5 hrs 9 min
+Sibu,Serian,336.1,4 hrs 6 min
+Sibu,Samarahan,380,4 hrs 48 min
+Sibu,Sri Aman,224.3,2 hrs 54 min
+Sibu,Betong,159.7,2 hrs 11 min
+Sibu,Sarikei,57.5,1 hr 4 min
+Sibu,Mukah,156.9,2 hrs 5 min
+Sibu,Bintulu,211.8,2 hrs 49 min
+Sibu,Kapit,161,2 hrs 41 min
+Sibu,Miri,404,5 hrs 23 min
+Sibu,Limbang,592.9,8 hrs 8 min
+Mukah,Kuching,563.4,7 hrs 3 min
+Mukah,Serian,502.1,6 hrs 2 min
+Mukah,Samarahan,556,6 hrs 48 min
+Mukah,Sri Aman,390.3,4 hrs 54 min
+Mukah,Betong,325.8,4 hrs 5 min
+Mukah,Sarikei,207.5,2 hrs 54 min
+Mukah,Sibu,156.9,2 hrs 5 min
+Mukah,Bintulu,144.9,2 hrs 14 min
+Mukah,Kapit,285.4,4 hrs 1 min
+Mukah,Miri,337.1,4 hrs 50 min
+Mukah,Limbang,526,7 hrs 36 min
+Bintulu,Kuching,618.3,7 hrs 53 min
+Bintulu,Serian,557,6 hrs 49 min
+Bintulu,Samarahan,610.9,7 hrs 38 min
+Bintulu,Sri Aman,445.2,5 hrs 39 min
+Bintulu,Betong,380.7,4 hrs 55 min
+Bintulu,Sarikei,262.4,3 hrs 42 min
+Bintulu,Sibu,211.8,2 hrs 49 min
+Bintulu,Mukah,144.9,2 hrs 14 min
+Bintulu,Kapit,340.6,4 hrs 49 min
+Bintulu,Miri,210.6,2 hrs 48 min
+Bintulu,Limbang,391.8,5 hrs 36 min
+Kapit,Kuching,522.3,6 hrs 53 min
+Kapit,Serian,461,5 hrs 56 min
+Kapit,Samarahan,514.9,6 hrs 38 min
+Kapit,Sri Aman,349.2,4 hrs 39 min
+Kapit,Betong,284.6,3 hrs 55 min
+Kapit,Sarikei,187.2,2 hrs 49 min
+Kapit,Sibu,161,2 hrs 41 min
+Kapit,Mukah,285.4,4 hrs 1 min
+Kapit,Bintulu,340.6,4 hrs 49 min
+Kapit,Miri,533.2,7 hrs 31 min
+Kapit,Limbang,722.1,10 hrs 18 min
+Miri,Kuching,810.5,10 hrs 22 min
+Miri,Serian,749.2,9 hrs 18 min
+Miri,Samarahan,803.1,10 hrs 8 min
+Miri,Sri Aman,637.4,8 hrs 11 min
+Miri,Betong,572.9,7 hrs 30 min
+Miri,Sarikei,454.6,6 hrs 20 min
+Miri,Sibu,404,5 hrs 23 min
+Miri,Mukah,337.1,4 hrs 50 min
+Miri,Bintulu,210.6,2 hrs 48 min
+Miri,Kapit,533.2,7 hrs 31 min
+Miri,Limbang,188.3,3 hrs 1 min
+Limbang,Kuching,999.4,13 hrs 7 min
+Limbang,Serian,938.1,12 hrs 3 min
+Limbang,Samarahan,992,12 hrs 53 min
+Limbang,Sri Aman,826.3,11hrs
+Limbang,Betong,761.8,10 hrs 18 min
+Limbang,Sarikei,643.5,9 hrs 3 min
+Limbang,Sibu,592.9,8 hrs 8 min
+Limbang,Mukah,526,7 hrs 36 min
+Limbang,Bintulu,391.8,5 hrs 36 min
+Limbang,Kapit,722.1,10 hrs 18 min
+Limbang,Miri,188.3,3 hrs 1 min

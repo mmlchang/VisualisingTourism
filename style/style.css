@@ -1,0 +1,2445 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,300,700|Open+Sans:400italic,300italic);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: #fefcf4;
+  font-family: monospace;
+}
+
+.display
+{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display::before
+{
+  content:'';
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  /* 100px high is a gradient transition */
+  height: 100px;
+  background: linear-gradient(to top, #094b65, transparent);
+  z-index: 2;
+}
+
+.display img
+{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.display #text
+{
+  position: absolute;
+  color: #DBA514;
+  font-size: 10vw;
+  text-align: center;
+  line-height: 0.65em;
+  font-family: 'Rancho', cursive;
+  transform: translateY(-50%);
+}
+
+.parallax-wrapper {
+  perspective: 1px;
+  transform-style: preserve-3d;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.sec
+{
+  background: #094b65;
+  position: relative;
+  transform: translateZ(-1px) scale(2);
+}
+
+.sec1{
+  position: relative;
+  transform: translateZ(-1px) scale(2);
+}
+
+.title_parallax {
+  position: absolute;
+  margin: 0;
+  top: calc(50% - 50px);
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  height: 90px;
+  color: white;
+  padding-top: 18px;
+  font-size: 4rem;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+canvas{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.season-desc {
+  z-index: 1;
+  position: relative;
+  background: #282E34;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  line-height: 2em;
+  padding: 3rem;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+}
+.season-desc .desc-wrapper {
+  margin: auto;
+  box-sizing: border-box;
+}
+.season-desc .season--title {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+.season-desc .season--about {
+  margin-top: 50px;
+  padding: 0;
+}
+
+.season--about {
+  font-size: 23px;
+  text-align: justify;
+}
+
+@media (max-width: 998px) and (orientation: portrait) {
+  .season-desc {
+    padding: 1.5rem 20px;
+    font-size: 1rem;
+    height: unset;
+    min-height: 100vh;
+  }
+  .season-desc .season-title {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    letter-spacing: unset;
+  }
+  .season-desc .season-about {
+    margin-top: 20px;
+  }
+}
+
+.background-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: hsla(200, 40%, 30%, .4);
+  background-image: url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'),
+                    url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+                    url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+                    url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+                    url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+  background-repeat: repeat-x;
+  background-position: 0 20%, 0 100%, 0 50%, 0 100%, 0 0;
+  background-size: 2500px, 800px, 500px 200px, 1000px, 400px 260px;
+  animation: para 50s infinite linear;
+}
+
+@keyframes para {
+  100% {
+      background-position:
+          -5000px 20%,
+          -800px 95%,
+          500px 50%,
+          1000px 100%,
+          400px 0;
+  }
+}
+
+.map_and_sidebar{
+  /* Set up flex container */
+  display: flex;
+  align-items: flex-start; /* Align children to the top */
+}
+
+/* ---------- Logo ---------- */
+.logo{
+  width: 50px;
+  height: auto;
+  margin-left: 360px;
+  margin-right: 10px;
+  margin-top: -18px;
+}
+
+@keyframes dash {
+  0% {
+    transform: skew(-30deg,0deg) translateX(300%) scale(.8);
+    opacity: 1;
+  }
+
+  40% {
+    transform: skew(10deg,0deg) translateX(100%) scale(.9);
+  }
+
+  60% {
+    transform: skew(10deg,0deg) translateX(-10px) scale(1.2);
+  }
+
+  70% {
+    transform: skew(0,0deg) translateX(0) scale(1.3);
+  }
+
+  75% {
+    transform: skew(0,0deg) translateX(0) scale(1.3);
+  }
+
+  90% {
+    transform: skew(0,0deg) translateX(0) scale(.85);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes done-animating {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#inner-text {
+  position: relative;
+  z-index: 1;
+  animation: done-animating 300ms ease-in;
+}
+
+#text-spot {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---------- Navigation Bar ---------- */
+.overlay-navigation {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  display: none;
+  opacity: 0;
+}
+
+nav, nav ul {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  -webkit-flex-basis: 25%;
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  display: none;
+}
+
+nav li a {
+  position: relative;
+  top: 46%;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  opacity: 0;
+}
+
+nav li a:before {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 100;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  opacity: 0;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+nav li a:after {
+  content: attr(data-content);
+  font-size: 18px;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+  opacity: 0;
+  position: absolute;
+  z-index: 100;
+  color: #fff;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  bottom: -50px;
+  text-transform: none;
+  font-family: monospace;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+nav li a:hover:before {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+nav li a:hover:after {
+  -webkit-transform: translateY(15px);
+  -ms-transform: translateY(15px);
+  transform: translateY(15px);
+  opacity: 1;
+}
+
+
+nav li:nth-of-type(1) {
+  background-color: #50300B
+}
+
+nav li:nth-of-type(2) {
+  background-color: #936B38
+}
+
+nav li:nth-of-type(3) {
+  background-color: #CE975F
+}
+
+nav li:nth-of-type(4) {
+  background-color: #cd8754
+}
+
+/* ---------- Burger King (3 line for navigation bar) ---------- */
+.open-overlay {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  z-index: 100;
+  width: 36px;
+  display: block;
+  cursor: pointer;
+}
+
+.open-overlay span {
+  display: block;
+  height: 3px;
+  background-color: #000;
+  cursor: pointer;
+  margin-top: 8px;
+  border-radius: 5px;
+}
+
+.animate-top-bar {
+  -webkit-animation: animate-top-bar .6s linear 1 both;
+  animation: animate-top-bar .6s linear 1 both
+}
+
+.animate-bottom-bar {
+  -webkit-animation: animate-bottom-bar .6s linear 1 both;
+  animation: animate-bottom-bar .6s linear 1 both
+}
+
+.animate-middle-bar {
+  -webkit-animation: animate-middle-bar .6s linear 1 both;
+  animation: animate-middle-bar .6s linear 1 both
+}
+
+.animate-out-top-bar {
+  -webkit-animation: animate-out-top-bar .6s linear 1 both;
+  animation: animate-out-top-bar .6s linear 1 both
+}
+
+.animate-out-bottom-bar {
+  -webkit-animation: animate-out-bottom-bar .6s linear 1 both;
+  animation: animate-out-bottom-bar .6s linear 1 both
+}
+
+.animate-out-middle-bar {
+  -webkit-animation: animate-out-middle-bar .6s linear 1 both;
+  animation: animate-out-middle-bar .6s linear 1 both
+}
+
+/* ---------- Animation keyframes ---------- */
+@keyframes animate-top-bar {
+  0% {
+    background-color: #000;
+  }
+  50% {
+    -webkit-transform: translateY(9px);
+    transform: translateY(9px)
+  }
+  80% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    background-color: #000
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    background-color: #fff;
+  }
+}
+
+@keyframes animate-bottom-bar {
+  0% {
+    background-color: #000;
+  }
+  50% {
+    -webkit-transform: translateY(-9px);
+    transform: translateY(-9px)
+  }
+  80% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    background-color: #000;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    background-color: #fff;
+  }
+}
+
+@keyframes animate-middle-bar {
+  0% {
+    background-color: #000;
+  }
+  80% {
+    background-color: #000;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+
+@keyframes animate-out-top-bar {
+  0% {
+    background-color: #fff
+  }
+  50% {
+    -webkit-transform: translateY(9px);
+    transform: translateY(9px)
+  }
+  80% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+    background-color: #000
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    background-color: #000;
+  }
+}
+
+@keyframes animate-out-bottom-bar {
+  0% {
+    background-color: #fff
+  }
+  50% {
+    -webkit-transform: translateY(-9px);
+    transform: translateY(-9px)
+  }
+  80% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    background-color: #000;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    background-color: #000;
+  }
+}
+
+@keyframes animate-out-middle-bar {
+  0% {
+    background-color: #fff
+  }
+  80% {
+    background-color: #000;
+  }
+  100% {
+    background-color: #000;
+  }
+}
+
+.home a {
+  font-family: "Work Sans", sans-serif;
+  color: #222;
+  font-weight: 300;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  left: 50px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #222;
+}
+
+@media (max-width: 640px) {
+  nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  nav ul li {
+    height: 20%;
+  }
+  nav ul li a {
+    font-size: 11px;
+  }
+  nav li a:after {
+    font-size: 0.6rem;
+    bottom: -25px;
+  }
+  nav li a:hover:after {
+    transform: translateY(0);
+  }
+  .open-overlay {
+    right: 1rem;
+  }
+  nav li a:before {
+    width: 25px;
+  }
+}
+
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 26px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color, color;
+}
+
+#back-to-top-btn:hover, #back-to-top-btn:focus {
+  background-color: #333;
+  color: #fff;  
+}
+
+@media(max-width: 992px) {
+  .container { padding: 20px 100px; }
+  #back-to-top-btn { font-size: 22px; width: 40px; height: 40px; bottom: 15px; right: 15px; }
+}
+
+@media(max-width:768px) {
+  body { font-size: 16px; }
+  .container { padding: 10px 50px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 22px; }
+  hr { margin: 30px 0; }
+  #back-to-top-btn { font-size: 18px; width: 32px; height: 32px; bottom: 6px; right: 6px; }
+}
+
+/* Animations */
+.btnEntrance {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: btnEntrance;
+}
+
+/* fadeInUp */
+@keyframes btnEntrance {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.btnExit {
+  animation-duration: 0.25s;
+  animation-fill-mode: both;  
+  animation-name: btnExit;
+}
+
+/* fadeOutDown */
+@keyframes btnExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+/* ---------- Brief Description ---------- */
+.popup .tips-overlay{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
+  display: none;
+}
+
+.popup .tips-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 600px;
+  height: 380px;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.popup .tips-content2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 600px;
+  height: 460px;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.popup .tips-content3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 600px;
+  height: 455px;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.popup .close-btn {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 30px;
+  height: 30px;
+  background: #222;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.instruction{
+  text-align: center;
+  margin-top: 7px;
+}
+
+.ins-content{
+  text-align: left;
+  padding: 0px 8px;
+  font-size: 14px;
+}
+
+.green_bck{
+  background-color: #14b04a;
+  padding: 0 5px;
+}
+
+.yellow_bck{
+  background-color: #dccb75;
+  padding: 0 5px;
+}
+
+.red_bck{
+  background-color: rgb(253, 80, 80);
+  padding: 0 5px;
+}
+
+.all_bck{
+  background-color: hsl(0, 36%, 79%);
+  padding: 0 5px;
+}
+
+.sea_bck{
+  background-color: hsl(185, 74%, 79%);
+  padding: 0 5px;
+}
+
+.land_bck{
+  background-color: hsl(143, 59%, 79%);
+  padding: 0 5px;
+}
+
+.air_bck{
+  background-color: hsl(28, 72%, 79%);
+  padding: 0 5px;
+}
+
+.domestic_bck{
+  background-color: #57a7d5;
+  padding: 0 5px;
+}
+
+.foreign_bck{
+  background-color: #74c476;
+  padding: 0 5px;
+}
+
+.port-icon, .land-icon, .air-icon{
+  margin-top: 8px;
+  margin-bottom: -5px;
+}
+
+.popup.active .tips-overlay{
+  display: block;
+}
+
+.popup.active .tips-content, .popup.active .tips-content2, .popup.active .tips-content3{
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.tips-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  left: 69%;
+  right: 0;
+  top: 17%;
+  border-radius: 50%; /* Creates a circular shape */
+  transition: box-shadow 0.3s ease; /* Adding transition for smooth effect */
+  cursor: pointer;
+}
+
+.tips-icon:hover {
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Gold shadow effect on hover */
+}
+
+/* ---------- For Sarawak_visitor_title & Transportation_title---------- */
+#Sarawak_visitor_title, #Transportation_title{
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+/* drawing info box to display the information */
+#info-box {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-width: 200px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: none; 
+  border-radius: 8px;
+  top: 0; 
+  left: 0; 
+  font-size: 13px;
+}
+
+/* ---------- For Sarawak_visitor_graph ---------- */
+#toggleMagnifier{
+  position: absolute;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  margin-left: 1000px;
+  margin-top: 50px;
+}
+
+.img-magnifier-container {
+  position: relative;
+}
+
+.img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: auto;
+  /*Set the size of the magnifier glass:*/
+  width: 200px;
+  height: 200px;
+}
+
+/* ---------- For side_card_holder ---------- */
+/* drawing a line with shadow */
+#side_card_holder {
+  width: 5px;          /* Set the width to create a vertical line */
+  height: 680px;
+  margin-left: -25px;
+  margin-top: 12px;
+  background: #fff;
+  color: #fff;
+  border-radius: 2px;
+  box-shadow: -5px 0 5px rgba(0, 0, 0, 0.86); /* Add a shadow on the left side */
+}
+
+/* Drawing a white square (container) placed beside the line  */
+#side_card_holder_container {
+  width: 360px;
+  height: 680px;
+  background: #fff;
+  margin-left: auto;
+}
+
+/* ---------- For range bar (year) ---------- */
+/* the range bar position */
+.year_rangeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0;
+  padding: 3.5rem 1rem 1rem 1rem;
+  gap: 1.1rem;
+}
+
+/* The range bar style */
+input[type=range] {
+  display: flex;
+  width: 16rem;
+  height: 1.5rem;
+  -webkit-appearance: none;
+  background: linear-gradient(180deg, #8f813d, #706048, #7A702A);
+  border-radius: 1.5rem;
+  outline: 2px ridge hsl(45, 80%, 35%);
+  outline-offset: 1rem;
+  box-shadow: 0 3px 2px -1px rgba(255, 255, 255, 0.25) inset, 0 0 10px 0 rgba(0, 0, 0, 0.5), 0 0 10px 2px rgba(0, 0, 0, 0.25), 0 8px 4px -3px rgba(0, 0, 0, 0.15);
+}
+
+/* The thumb's (the big circle) position */
+input[type=range]::-webkit-slider-runnable-track {
+  background: #222;
+  width: 24rem;
+  height: 0.25rem;
+  margin: 0 0.5rem;
+}
+
+/* The thumb's (the big circle) style */
+input[type=range]::-webkit-slider-thumb {
+  transform: translatey(-1.375rem);
+  width: 3rem;
+  height: 3rem;
+  background: radial-gradient(#444 45%, #555 50%, #222 55%, #8C7853 57.5%, #8C7853 100%), conic-gradient(#4b4b4b 10deg, #777 45deg, #5b5b6b 70deg, #9f9f9f 105deg, #444 140deg, #AAA 185deg, #666 210deg, #999 245deg, #777 285deg, #9f9f9f 320deg, #4b4b4b);
+  background-blend-mode: overlay;
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.35) inset, 0 1px 1px 1px rgba(255, 255, 255, 0.25) inset, 0 0 2px 2px rgba(0, 0, 0, 0.15) inset, 0 1px 1px 1px rgba(0, 0, 0, 0.35), 0 3px 2px 1px rgba(0, 0, 0, 0.25), 0 6px 4px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 1.5rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+/* Five years (2018-2022) style */
+#year_ticks {
+  display: flex;
+  justify-content: space-between;
+  color: hsl(45, 80%, 35%);
+  width: 15rem;
+  line-height: 1.75;
+  transform: translatey(0.8rem);
+  font-size: 15px;
+}
+
+/* Years's border */
+#year_ticks > option {
+  z-index: 1;
+  display: flex;
+  position: relative;
+  padding: 0 0.10rem;
+  border: 1px solid hsl(45, 80%, 35%);
+  border-radius: 0.5rem;
+  text-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Years's border style */
+#year_ticks > option:before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  height: 1rem;
+  width: 1px;
+  background: hsl(45, 80%, 35%);
+  transform: translatey(-100%);
+}
+
+/* ----------- For dropdown --> countries ---------- */
+.countries_drop {
+  width: 9.5em;
+  border-radius: 1.5em;
+  max-height: 200px; 
+  overflow-y: hidden;
+  margin: 3em 1em;
+  font-family: pfs-bold;
+  color: #FFF3DF;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 16px;
+  position: absolute;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  will-change: width;
+}
+
+/* Style for text in the dropdown list --> countries */
+.countries_option {
+  font-size: 13px;
+}
+
+/* Style the scrollbar track */
+.countries_options-container::-webkit-scrollbar {
+  width: 8px; /* Adjust the width as needed */
+  border-radius: 2px; /* Add rounded corners to the track */
+  background-color: #ccc; /* Track background color */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.countries_options-container {
+  max-height: 150px; /* Set a maximum height for the container */
+  overflow-y: hidden; /* Enable vertical scroll for overflowing content */
+}
+
+.countries_options-container::-webkit-scrollbar-thumb {
+  background-color: #555; /* Thumb background color */
+  border-radius: 2px; /* Add rounded corners to the thumb */
+}
+
+/* Selection drop box style */
+.countries_drop .countries_option {
+  padding: 1em;
+  cursor: pointer;
+  background-color: #795C34;
+}
+
+/* Make the dropdown extendable */
+.countries_drop .countries_option:not(.active) {
+  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* Make the dropdown visible */
+.countries_drop.visible {
+  -webkit-animation: bounce 1s;
+          animation: bounce 1s;
+  width: 24em;        
+}
+
+.countries_drop.visible:before, .countries_drop.visible:after {
+  border-color: #fff;
+}
+
+.countries_drop.visible:before {
+  opacity: 0;
+}
+
+.countries_drop.visible:after {
+  opacity: 1;
+}
+
+.countries_drop.visible .countries_option {
+  color: #fff;
+  display: block;
+}
+
+.countries_drop.opacity .countries_option {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  opacity: 1;
+}
+
+.countries_drop.opacity .countries_option:nth-child(0) {
+  -webkit-transition: opacity 0.5s 0s, -webkit-transform 0.5s 0s;
+  transition: opacity 0.5s 0s, -webkit-transform 0.5s 0s;
+  transition: opacity 0.5s 0s, transform 0.5s 0s;
+  transition: opacity 0.5s 0s, transform 0.5s 0s, -webkit-transform 0.5s 0s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(1) {
+  -webkit-transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(2) {
+  -webkit-transition: opacity 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(3) {
+  -webkit-transition: opacity 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(4) {
+  -webkit-transition: opacity 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(5) {
+  -webkit-transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(6) {
+  -webkit-transition: opacity 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(7) {
+  -webkit-transition: opacity 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(8) {
+  -webkit-transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+}
+
+.countries_drop.opacity .countries_option:nth-child(9) {
+  -webkit-transition: opacity 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+}
+
+.countries_drop.withBG .countries_option {
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+
+/* After selected a country then hover will change color */
+.countries_drop.withBG .countries_option:not(.placeholder):hover {
+  background-color: #9A7B4F;
+}
+
+.countries_drop.withBG .countries_option:not(.placeholder).active {
+  background-color: #9A7B4F;
+}
+
+.countries_mini-hack {
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* Style for the dropdown arrow */
+.dropdown-arrow {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  color: #FFF3DF; /* Adjust the color as needed */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Add a transition for smooth rotation */
+}
+
+/* Rotate the arrow upside down when the dropdown is active */
+.rotate-180 {
+  transform: translateY(-350%) rotate(180deg);
+}
+
+/* ---------- For dropdown --> Months ---------- */
+.months_drop {
+  width: 9.5em;
+  border-radius: 1.5em;
+  max-height: 200px; 
+  overflow-y: hidden;
+  margin: 3em 12em;
+  font-family: pfs-bold;
+  color: #FFF3DF;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 16px;
+  position: absolute;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  will-change: width;
+}
+
+/* Style for text in the dropdown list --> months */
+.month_option {
+  font-size: 13px;
+}
+
+/* Style the scrollbar track */
+.months_options-container::-webkit-scrollbar {
+  width: 8px; /* Adjust the width as needed */
+  border-radius: 2px; /* Add rounded corners to the track */
+  background-color: #ccc; /* Track background color */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.months_options-container {
+  max-height: 150px; /* Set a maximum height for the container */
+  overflow-y: hidden; /* Enable vertical scroll for overflowing content */
+}
+
+.months_options-container::-webkit-scrollbar-thumb {
+  background-color: #555; /* Thumb background color */
+  border-radius: 2px; /* Add rounded corners to the thumb */
+}
+
+/* Selection drop box style */
+.months_drop .month_option {
+  padding: 1em;
+  cursor: pointer;
+  background-color: #795C34;
+}
+
+/* Make the dropdown extendable */
+.months_drop .month_option:not(.active) {
+  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* Make the dropdown visible */
+.months_drop.visible {
+  -webkit-animation: bounce 1s;
+          animation: bounce 1s;
+  width: 24em;        
+}
+
+.months_drop.visible:before, .months_drop.visible:after {
+  border-color: #fff;
+}
+
+.months_drop.visible:before {
+  opacity: 0;
+}
+
+.months_drop.visible:after {
+  opacity: 1;
+}
+
+.months_drop.visible .month_option {
+  color: #fff;
+  display: block;
+}
+
+.months_drop.opacity .month_option {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  opacity: 1;
+}
+
+.months_drop.opacity .month_option:nth-child(0) {
+  -webkit-transition: opacity 0.5s 0s, -webkit-transform 0.5s 0s;
+  transition: opacity 0.5s 0s, -webkit-transform 0.5s 0s;
+  transition: opacity 0.5s 0s, transform 0.5s 0s;
+  transition: opacity 0.5s 0s, transform 0.5s 0s, -webkit-transform 0.5s 0s;
+}
+
+.months_drop.opacity .month_option:nth-child(1) {
+  -webkit-transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+}
+
+.months_drop.opacity .month_option:nth-child(2) {
+  -webkit-transition: opacity 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+}
+
+.months_drop.opacity .month_option:nth-child(3) {
+  -webkit-transition: opacity 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+}
+
+.months_drop.opacity .month_option:nth-child(4) {
+  -webkit-transition: opacity 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+}
+
+.months_drop.opacity .month_option:nth-child(5) {
+  -webkit-transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+}
+
+.months_drop.opacity .month_option:nth-child(6) {
+  -webkit-transition: opacity 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+}
+
+.months_drop.opacity .month_option:nth-child(7) {
+  -webkit-transition: opacity 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+}
+
+.months_drop.opacity .month_option:nth-child(8) {
+  -webkit-transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+}
+
+.months_drop.opacity .month_option:nth-child(9) {
+  -webkit-transition: opacity 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+}
+
+.months_drop.withBG .month_option {
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+
+/* After selected a month then hover will change color */
+.months_drop.withBG .month_option:not(.placeholder):hover {
+  background-color: #9A7B4F;
+}
+
+.months_drop.withBG .month_option:not(.placeholder).active {
+  background-color: #9A7B4F;
+}
+
+.month_mini-hack {
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.monthdropdown-arrow {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  color: #FFF3DF; /* Adjust the color as needed */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Add a transition for smooth rotation */
+}
+
+/* Rotate the arrow upside down when the dropdown is active */
+.monthrotate-180 {
+  transform: translateY(-350%) rotate(180deg);
+}
+
+/* ---------- GO button ---------- */
+#goButton {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+  margin: 220px 0 80px 130px;
+  cursor: pointer;
+}
+
+#goButton::before {
+  position: absolute;
+  content: "GO";
+  color: #FFF3DF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 16px;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: #708238;
+  background-size: 200%;
+}
+
+#goButton:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+#goButton:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+#goButton:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Grand Total ---------- */
+.grand_total_text, #grandTotalLabel{
+  font-family: monospace;
+  font-size: 17px;
+}
+
+.grand_total_arrivals {
+  color: #000000;
+  font-size: 20px;
+  margin-top: 130px;
+  text-align: center;
+}
+
+.grand_total_arrivals2 {
+  margin-top: 300px;
+  text-align: center;
+}
+
+.grand_total_arrivals_value {
+  text-align: center;
+}
+
+/* ---------- Transportation modes boxes ---------- */
+.transportation_boxes * {
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+}
+
+.transportation_boxes {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 60vmin;
+}
+
+.content {
+  width: 30vmin;
+  height: 15vmin;
+  background: linear-gradient(90deg, #fff0 0 11.75vmin, #fff 0 12.25vmin, #fff0 0 17.55vmin, #fff 0 18.08vmin, #fff0 0 23.55vmin, #fff 0 23.85vmin, #fff0 0 100%),
+    linear-gradient(90deg, #fff 6.9vmin, #fff0 0 calc(100% - 0.05vmin), #fff 0 100%),
+    /* Down shadow */
+    linear-gradient(0deg, #fff 0 5.75vmin, #fff0 0 9.4vmin, #fff 0 100%),
+    linear-gradient(90deg, #fff0 0 1vmin, #0004 0 calc(100% - 0.05vmin), #fff0 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateX(-10deg) rotateY(0deg) scale3d(1.5, 1.5, 1.5);
+  margin-left: -23vmin;
+}
+
+/* Boxes shadow */
+.content:before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 2vmin);
+  height: calc(100% - 2vmin);
+  background: #00000040;
+  transform: translateZ(-1px);
+  filter: blur(0.5vmin);
+}
+
+.cuboid {
+  --height: 2.7;
+  --width: 5;
+  --depth: 9.5;
+  --hue: 220;
+  --sat: 20%;
+  height: calc(var(--height) * 1vmin);
+  width: calc(var(--width) * 1vmin);
+  position: absolute;
+  transition: all 0.1s ease 0s;
+  cursor: pointer;
+  margin-left: -11.5vmin;
+}
+
+/* Text Color */
+.cuboid .side {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  text-shadow: 1px 0px 1px #fff4, 0px 0px 1px #000c;
+  color: #000; 
+}
+
+/* All Button */
+/* Boxes front color */
+.cuboid-all .side:nth-of-type(1) {
+  transform: translate3d(-50%, -50%, calc(var(--depth) * 0.5vmin));
+  background: hsl(0, 36%, 79%);
+}
+
+/* Boxes back color */
+.cuboid-all .side:nth-of-type(2) {
+  transform: translate3d(-50%, -50%, calc(var(--depth) * -0.5vmin))
+    rotateY(180deg);
+  background: hsl(0, 36%, 59%);
+}
+
+/* Boxes right color */
+.cuboid-all .side:nth-of-type(3) {
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(90deg)
+    translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background: hsl(0, 36%, 70%);
+}
+
+/* Boxes left color */
+.cuboid-all .side:nth-of-type(4) {
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(-90deg)
+    translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background: hsl(0, 36%, 70%);
+}
+
+/* Boxes top color */
+.cuboid-all .side:nth-of-type(5) {
+  height: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(90deg)
+    translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background: hsl(0, 36%, 87%);
+}
+
+/* Boxes bottom color */
+.cuboid-all .side:nth-of-type(6) {
+  height: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg)
+    translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background: hsl(0, 36%, 59%);
+}
+
+/* Sea Button */
+/* Boxes front color */
+.cuboid-sea .side:nth-of-type(1) {
+  transform: translate3d(-50%, -50%, calc(var(--depth) * 0.5vmin));
+  background: hsl(185, 74%, 79%);
+}
+
+/* Boxes back color */
+.cuboid-sea .side:nth-of-type(2) {
+  transform: translate3d(-50%, -50%, calc(var(--depth) * -0.5vmin))
+    rotateY(180deg);
+  background: hsl(185, 74%, 59%);
+}
+
+/* Boxes right color */
+.cuboid-sea .side:nth-of-type(3) {
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(90deg)
+    translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background: hsl(185, 74%, 70%);
+}
+
+/* Boxes left color */
+.cuboid-sea .side:nth-of-type(4) {
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(-90deg)
+    translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background: hsl(185, 74%, 70%);
+}
+
+/* Boxes top color */
+.cuboid-sea .side:nth-of-type(5) {
+  height: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(90deg)
+    translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background: hsl(185, 74%, 87%);
+}
+
+/* Boxes bottom color */
+.cuboid-sea .side:nth-of-type(6) {
+  height: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg)
+    translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background: hsl(185, 74%, 59%);
+}
+
+/* Land Button */
+/* Boxes front color */
+.cuboid-land .side:nth-of-type(1) {
+  transform: translate3d(-50%, -50%, calc(var(--depth) * 0.5vmin));
+  background: hsl(143, 59%, 79%);
+}
+
+/* Boxes back color */
+.cuboid-land .side:nth-of-type(2) {
+  transform: translate3d(-50%, -50%, calc(var(--depth) * -0.5vmin))
+    rotateY(180deg);
+  background: hsl(143, 59%, 59%);
+}
+
+/* Boxes right color */
+.cuboid-land .side:nth-of-type(3) {
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(90deg)
+    translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background: hsl(143, 59%, 70%);
+}
+
+/* Boxes left color */
+.cuboid-land .side:nth-of-type(4) {
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(-90deg)
+    translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background: hsl(143, 59%, 70%);
+}
+
+/* Boxes top color */
+.cuboid-land .side:nth-of-type(5) {
+  height: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(90deg)
+    translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background: hsl(143, 59%, 87%);
+}
+
+/* Boxes bottom color */
+.cuboid-land .side:nth-of-type(6) {
+  height: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg)
+    translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background: hsl(143, 59%, 59%);
+}
+
+/* Air Button */
+/* Boxes front color */
+.cuboid-air .side:nth-of-type(1) {
+  transform: translate3d(-50%, -50%, calc(var(--depth) * 0.5vmin));
+  background: hsl(28, 72%, 79%);
+}
+
+/* Boxes back color */
+.cuboid-air .side:nth-of-type(2) {
+  transform: translate3d(-50%, -50%, calc(var(--depth) * -0.5vmin))
+    rotateY(180deg);
+  background: hsl(28, 72%, 59%);
+}
+
+/* Boxes right color */
+.cuboid-air .side:nth-of-type(3) {
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(90deg)
+    translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background: hsl(28, 72%, 70%);
+}
+
+/* Boxes left color */
+.cuboid-air .side:nth-of-type(4) {
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateY(-90deg)
+    translate3d(0, 0, calc(var(--width) * 0.5vmin));
+  background: hsl(28, 72%, 70%);
+}
+
+/* Boxes top color */
+.cuboid-air .side:nth-of-type(5) {
+  height: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(90deg)
+    translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background: hsl(28, 72%, 87%);
+}
+
+/* Boxes bottom color */
+.cuboid-air .side:nth-of-type(6) {
+  height: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg)
+    translate3d(0, 0, calc(var(--height) * 0.5vmin));
+  background: hsl(28, 72%, 59%);
+}
+
+.cuboid:nth-child(2) {
+  margin-left: 0;
+}
+.cuboid:nth-child(3) {
+  margin-left: 11.5vmin;
+}
+.cuboid:nth-child(4) {
+  margin-left: 23vmin;
+}
+
+.cuboid:hover {
+  transform: translateZ(-1vmin);
+}
+
+#all:checked ~ .content label[for="all"],
+#sea:checked ~ .content label[for="sea"],
+#land:checked ~ .content label[for="land"],
+#air:checked ~ .content label[for="air"] {
+  transform: translateZ(-3vmin);
+  transition: all 0.2s cubic-bezier(0, 0.24, 0.46, 2.31) 0s;
+  --sat: 80%;
+}
+
+/* Light when the radio button is checked */ 
+.cuboid .side:nth-of-type(1):before,
+.cuboid .side:nth-of-type(1):after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(-1px);
+}
+
+#all:checked ~ .content label[for="all"],
+#sea:checked ~ .content label[for="sea"],
+#land:checked ~ .content label[for="land"],
+#air:checked ~ .content label[for="air"] {
+  cursor: default;
+}
+
+/* Text color when the radio button is checked */
+#all:checked ~ .content label[for="all"] .side,
+#sea:checked ~ .content label[for="sea"] .side,
+#land:checked ~ .content label[for="land"] .side,
+#air:checked ~ .content label[for="air"] .side {
+  color: #ffffff;
+  text-shadow: 1px 0px 1px #fff4, 0px 0px 1px #000c, 0px 0px 1px #ffffff,
+    0px 0px 5px #ffffff, 0px 0px 10px #ffffff, 0px 0px 20px #ffffff,
+    0px 0px 30px #ffffff;
+}
+
+/* Shadow when the (all) radio button is checked */
+#all:checked ~ .content label[for="all"] .side:nth-of-type(1):after {
+  background: hsl(0, 36%, 47%);
+  filter: blur(15px);
+  transform: translate3d(0, 0, -1px);
+  box-shadow: hsl(0, 36%, 47%);
+  height: 100%;
+  top: 0;
+}
+
+/* Shadow when the (sea) radio button is checked */
+#sea:checked ~ .content label[for="sea"] .side:nth-of-type(1):after {
+  background: hsl(185, 74%, 47%);
+  filter: blur(15px);
+  transform: translate3d(0, 0, -1px);
+  box-shadow: hsl(185, 74%, 47%);
+  height: 100%;
+  top: 0;
+}
+
+/* Shadow when the (land) radio button is checked */
+#land:checked ~ .content label[for="land"] .side:nth-of-type(1):after {
+  background: hsl(143, 59%, 47%);
+  filter: blur(15px);
+  transform: translate3d(0, 0, -1px);
+  box-shadow: hsl(143, 59%, 47%);
+  height: 100%;
+  top: 0;
+}
+
+/* Shadow when the (air) radio button is checked */
+#air:checked ~ .content label[for="air"] .side:nth-of-type(1):after {
+  background: hsl(28, 72%, 47%);
+  filter: blur(15px);
+  transform: translate3d(0, 0, -1px);
+  box-shadow: hsl(28, 72%, 47%);
+  height: 100%;
+  top: 0;
+}
+
+.hidden_range_bar{
+  visibility: hidden;
+}
+
+/* ----------- For dropdown --> departure ---------- */
+.departure_drop {
+  width: 9.5em;
+  border-radius: 1.5em;
+  max-height: 200px; 
+  overflow-y: hidden;
+  margin: 0.5em 1em;
+  color: #FFF3DF;
+  text-transform: uppercase;
+  position: absolute;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  will-change: width;
+}
+
+/* Style for text in the dropdown list --> departure */
+.departure_option {
+  font-size: 13px;
+}
+
+/* Style the scrollbar track */
+.departure_options-container::-webkit-scrollbar {
+  width: 8px; /* Adjust the width as needed */
+  border-radius: 2px; /* Add rounded corners to the track */
+  background-color: #ccc; /* Track background color */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.departure_options-container {
+  max-height: 150px; /* Set a maximum height for the container */
+  overflow-y: hidden; /* Enable vertical scroll for overflowing content */
+}
+
+.departure_options-container::-webkit-scrollbar-thumb {
+  background-color: #555; /* Thumb background color */
+  border-radius: 2px; /* Add rounded corners to the thumb */
+}
+
+/* Selection drop box style */
+.departure_drop .departure_option {
+  padding: 1em;
+  cursor: pointer;
+  background-color: #795C34;
+}
+
+/* Make the dropdown extendable */
+.departure_drop .departure_option:not(.active) {
+  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* Make the dropdown visible */
+.departure_drop.visible {
+  -webkit-animation: bounce 1s;
+          animation: bounce 1s;
+  width: 24em;        
+}
+
+.departure_drop.visible:before, .departure_drop.visible:after {
+  border-color: #fff;
+}
+
+.departure_drop.visible:before {
+  opacity: 0;
+}
+
+.departure_drop.visible:after {
+  opacity: 1;
+}
+
+.departure_drop.visible .departure_option {
+  color: #fff;
+  display: block;
+}
+
+.departure_drop.opacity .departure_option {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  opacity: 1;
+}
+
+.departure_drop.opacity .departure_option:nth-child(0) {
+  -webkit-transition: opacity 0.5s 0s, -webkit-transform 0.5s 0s;
+  transition: opacity 0.5s 0s, -webkit-transform 0.5s 0s;
+  transition: opacity 0.5s 0s, transform 0.5s 0s;
+  transition: opacity 0.5s 0s, transform 0.5s 0s, -webkit-transform 0.5s 0s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(1) {
+  -webkit-transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(2) {
+  -webkit-transition: opacity 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(3) {
+  -webkit-transition: opacity 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(4) {
+  -webkit-transition: opacity 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(5) {
+  -webkit-transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(6) {
+  -webkit-transition: opacity 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(7) {
+  -webkit-transition: opacity 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(8) {
+  -webkit-transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+}
+
+.departure_drop.opacity .departure_option:nth-child(9) {
+  -webkit-transition: opacity 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+}
+
+.departure_drop.withBG .departure_option {
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+
+/* After selected a departure then hover will change color */
+.departure_drop.withBG .departure_option:not(.placeholder):hover {
+  background-color: #9A7B4F;
+}
+
+.departure_drop.withBG .departure_option:not(.placeholder).active {
+  background-color: #9A7B4F;
+}
+
+/* Drawing the ^ down arrow */
+.departure_drop:after, .departure_drop:before {
+  content: "";
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 0.75em;
+  height: 0.75em;
+  border: 0.2em solid #FFF3DF;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.departure_drop:before {
+  border-left: none;
+  border-top: none;
+  top: 0.6em;
+}
+
+.departure_drop:after {
+  border-right: none;
+  border-bottom: none;
+  opacity: 0;
+  top: 1.2em;
+}
+
+.departure_mini-hack {
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* ---------- For dropdown --> Destination ---------- */
+.destination_drop {
+  width: 9.5em;
+  border-radius: 1.5em;
+  max-height: 200px; 
+  overflow-y: hidden;
+  margin: 0.5em 12em;
+  color: #FFF3DF;
+  text-transform: uppercase;
+  position: absolute;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  will-change: width;
+}
+
+/* Style for text in the dropdown list --> destination */
+.destination_option {
+  font-size: 13px;
+}
+
+/* Style the scrollbar track */
+.destination_options-container::-webkit-scrollbar {
+  width: 8px; /* Adjust the width as needed */
+  border-radius: 2px; /* Add rounded corners to the track */
+  background-color: #ccc; /* Track background color */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+.destination_options-container {
+  max-height: 150px; /* Set a maximum height for the container */
+  overflow-y: hidden; /* Enable vertical scroll for overflowing content */
+}
+
+.destination_options-container::-webkit-scrollbar-thumb {
+  background-color: #555; /* Thumb background color */
+  border-radius: 2px; /* Add rounded corners to the thumb */
+}
+
+/* Selection drop box style */
+.destination_drop .destination_option {
+  padding: 1em;
+  cursor: pointer;
+  background-color: #795C34;
+}
+
+/* Make the dropdown extendable */
+.destination_drop .destination_option:not(.active) {
+  display: none;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* Make the dropdown visible */
+.destination_drop.visible {
+  -webkit-animation: bounce 1s;
+          animation: bounce 1s;
+  width: 24em;        
+}
+
+.destination_drop.visible:before, .destination_drop.visible:after {
+  border-color: #fff;
+}
+
+.destination_drop.visible:before {
+  opacity: 0;
+}
+
+.destination_drop.visible:after {
+  opacity: 1;
+}
+
+.destination_drop.visible .destination_option {
+  color: #fff;
+  display: block;
+}
+
+.destination_drop.opacity .destination_option {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  opacity: 1;
+}
+
+.destination_drop.opacity .destination_option:nth-child(0) {
+  -webkit-transition: opacity 0.5s 0s, -webkit-transform 0.5s 0s;
+  transition: opacity 0.5s 0s, -webkit-transform 0.5s 0s;
+  transition: opacity 0.5s 0s, transform 0.5s 0s;
+  transition: opacity 0.5s 0s, transform 0.5s 0s, -webkit-transform 0.5s 0s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(1) {
+  -webkit-transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, transform 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(2) {
+  -webkit-transition: opacity 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s;
+  transition: opacity 0.5s 0.2s, transform 0.5s 0.2s, -webkit-transform 0.5s 0.2s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(3) {
+  -webkit-transition: opacity 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s;
+  transition: opacity 0.5s 0.3s, transform 0.5s 0.3s, -webkit-transform 0.5s 0.3s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(4) {
+  -webkit-transition: opacity 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s;
+  transition: opacity 0.5s 0.4s, transform 0.5s 0.4s, -webkit-transform 0.5s 0.4s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(5) {
+  -webkit-transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s, -webkit-transform 0.5s 0.5s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(6) {
+  -webkit-transition: opacity 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s;
+  transition: opacity 0.5s 0.6s, transform 0.5s 0.6s, -webkit-transform 0.5s 0.6s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(7) {
+  -webkit-transition: opacity 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s;
+  transition: opacity 0.5s 0.7s, transform 0.5s 0.7s, -webkit-transform 0.5s 0.7s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(8) {
+  -webkit-transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s;
+  transition: opacity 0.5s 0.8s, transform 0.5s 0.8s, -webkit-transform 0.5s 0.8s;
+}
+
+.destination_drop.opacity .destination_option:nth-child(9) {
+  -webkit-transition: opacity 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s;
+  transition: opacity 0.5s 0.9s, transform 0.5s 0.9s, -webkit-transform 0.5s 0.9s;
+}
+
+.destination_drop.withBG .destination_option {
+  -webkit-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+
+/* After selected a destination then hover will change color */
+.destination_drop.withBG .destination_option:not(.placeholder):hover {
+  background-color: #9A7B4F;
+}
+
+.destination_drop.withBG .destination_option:not(.placeholder).active {
+  background-color: #9A7B4F;
+}
+
+/* Drawing the ^ down arrow */
+.destination_drop:after, .destination_drop:before {
+  content: "";
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 0.75em;
+  height: 0.75em;
+  border: 0.2em solid #FFF3DF;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.destination_drop:before {
+  border-left: none;
+  border-top: none;
+  top: 0.6em;
+}
+
+.destination_drop:after {
+  border-right: none;
+  border-bottom: none;
+  opacity: 0;
+  top: 1.2em;
+}
+
+.destination_mini-hack {
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* ---------- For modes_title ---------- */
+.modes_title{
+  color: #000;
+  z-index: 1;
+  position: relative;
+  margin-left: 43px;
+  margin-bottom: -10px;
+}
+
+/* ---------- For departure_title ---------- */
+.departure_title, .destination_title{
+  color: #000;
+  margin-bottom:-0.5px;
+  margin-left: 30px;
+  font-size: 20px;
+}
+
+#departure_name, #destination_name{
+  color: #000;
+  margin-bottom:-0.5px;
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+/* ---------- For National_Park_title ---------- */
+#National_Park_title{
+  position: absolute;
+  top: 20%;
+  left: 38%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+
+/* ---------- For checkbox --> Modes ---------- */
+.modes_check {
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+#domestic_mode_checkbox,
+#foreign_mode_checkbox {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  -webkit-appearance: none;
+  background: linear-gradient(0deg, #333, #000);
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1), 0 5px 20px rgba(0, 0, 0, .5), inset 0 0 15px rgba(0, 0, 0, .2);
+  cursor: pointer;
+  font-family: monospace;
+}
+
+#foreign_mode_checkbox {
+  margin-left: 25px;
+}
+
+#domestic_mode_checkbox:checked{
+  background: linear-gradient(0deg, rgb(163, 226, 255), #57a7d5);
+  box-shadow: 0 0 2px rgb(163, 226, 255), 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1), 0 5px 20px rgba(0, 0, 0, .5), inset 0 0 15px rgba(0, 0, 0, .2);
+}
+
+#foreign_mode_checkbox:checked{
+  background: linear-gradient(0deg, #afc7af, #74c476);
+  box-shadow: 0 0 2px #90c491, 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px rgba(0, 0, 0, 1), 0 5px 20px rgba(0, 0, 0, .5), inset 0 0 15px rgba(0, 0, 0, .2);
+}
+
+#domestic_mode_checkbox:before{
+  content: 'Domestic';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(0deg, #000, #6b6b6b);
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px #232323;
+  transform: scale(.98, .96);
+  transition: .5s;
+  font-size: 11px;
+  color: #fff; /* Set the text color */
+  line-height: 40px; /* Center the text vertically */
+  text-align: center; /* Center the text horizontally */
+}
+
+#foreign_mode_checkbox:before{
+  content: 'Foreign';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(0deg, #000, #6b6b6b);
+  border-radius: 20px;
+  box-shadow: 0 0 0 1px #232323;
+  transform: scale(.98, .96);
+  transition: .5s;
+  font-size: 11px;
+  color: #fff; /* Set the text color */
+  line-height: 40px; /* Center the text vertically */
+  text-align: center; /* Center the text horizontally */
+}
+
+#domestic_mode_checkbox:checked:before,
+#foreign_mode_checkbox:checked:before {
+  left: 40px;
+}
+
+#domestic_mode_checkbox:after,
+#foreign_mode_checkbox:after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 65px;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(0deg, #6b6b6b, #000);
+  border-radius: 50%;
+  transition: .5s;
+}
+
+#domestic_mode_checkbox:checked:after{
+  background: #63cdff;
+  left: 105px;
+  box-shadow: 0 0 5px #13b3ff, 0 0 5px #13b3ff;
+}
+
+#foreign_mode_checkbox:checked:after{
+  background: #63ffa1;
+  left: 105px;
+  box-shadow: 0 0 5px #13ffa5, 0 0 5px #13ffa5;
+}
+
+/* ---------- Legend and key for national park ---------- */
+#national_park_legend{
+  position: absolute;
+  bottom: 15px; /* Adjust the top position as needed */
+  right: 430px; /* Adjust the left position as needed */
+  background-color:   white;
+  border-style: solid;
+  border-color: black;
+  padding: 10px 10px 5px 10px;
+  border-width: 1px;
+  font-size: 12.8px;
+}
+
+.legend-container {
+  padding-right: 10px;
+}
+
+#nationalparktooltip {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px 15px 10px 10px;
+  max-width: 300px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: none; 
+  z-index: 999; 
+  white-space: nowrap; 
+  border-radius: 8px;
+  top: 40%;
+  left: 17%;
+  font-size: 13px;
+}
+
+/* ---------- Transportation - Air ---------- */
+#transportationtooltip {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px 15px 10px 10px;
+  max-width: 300px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: none; 
+  border-radius: 8px;
+  z-index: 999; 
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+#transportation-info-box{
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 0 15px 0 10px;
+  max-width: 300px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.tooltip2 {
+  position: absolute;
+  text-align: center;
+  padding: 2px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 0 10px 10px 10px;
+  max-width: 250px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 999; 
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+#resetButton {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+  margin: 50px 0 80px 130px;
+  cursor: pointer;
+}
+
+#resetButton::before {
+  position: absolute;
+  content: "RESET";
+  color: #FFF3DF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 16px;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: #da4f5a;
+  background-size: 200%;
+}
+
+#resetButton:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+#resetButton:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+#resetButton:active {
+  transform: scale(0.95);
+}

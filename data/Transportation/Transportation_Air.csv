@@ -1,0 +1,33 @@
+﻿Departure,Departure_Division,Destination,Destination_Division,Distance,Duration
+Bintulu Airport,Bintulu,Kuching International Airport,Kuching,350.76,1 hr 16 min
+Bintulu Airport,Bintulu,Miri International Airport,Miri,171.83,55 min
+Bintulu Airport,Bintulu,New Mukah Airport,Mukah,107.87,35 min
+Bintulu Airport,Bintulu,Sibu Airport,Sibu,167.16,1 hr 9 min
+Kuching International Airport,Kuching,Bintulu Airport,Bintulu,350.76,1 hr 16 min
+Kuching International Airport,Kuching,Limbang Airport,Limbang,629.02,2 hrs 6 min
+Kuching International Airport,Kuching,Miri International Airport,Miri,514.68,1 hr 19 min
+Kuching International Airport,Kuching,New Mukah Airport,Mukah,246.55,1 hr 4 min
+Kuching International Airport,Kuching,Tanjung Manis Airport,Sarikei,146.15,3 hrs 50 min
+Kuching International Airport,Kuching,Sibu Airport,Sibu,184.95,1 hr 13 min
+Limbang Airport,Limbang,Kuching International Airport,Kuching,629.02,2 hrs 6 min
+Limbang Airport,Limbang,Miri International Airport,Miri,382.7,4 hrs 12 min
+Limbang Airport,Limbang,New Mukah Airport,Mukah,382.7,4 hrs 12 min
+Limbang Airport,Limbang,Sibu Airport,Sibu,446.8,5 hrs
+Miri International Airport,Miri,Bintulu Airport,Bintulu,171.83,56 min
+Miri International Airport,Miri,Kuching International Airport,Kuching,514.68,1 hr 19 min
+Miri International Airport,Miri,Limbang Airport,Limbang,382.7,4 hrs 12 min
+Miri International Airport,Miri,New Mukah Airport,Mukah,268.3,1 hr 19 min
+Miri International Airport,Miri,Tanjung Manis Airport,Sarikei,372.91,13 hrs 45 min
+Miri International Airport,Miri,Sibu Airport,Sibu,335.71,1 hr 33 min
+New Mukah Airport,Mukah,Bintulu Airport,Bintulu,107.87,35 min
+New Mukah Airport,Mukah,Kuching International Airport,Kuching,246.55,1 hr 4 min
+New Mukah Airport,Mukah,Limbang Airport,Limbang,382.7,4 hrs 12 min
+New Mukah Airport,Mukah,Miri International Airport,Miri,268.3,1 hr 20 min
+New Mukah Airport,Mukah,Sibu Airport,Sibu,72.37,49 min
+New Mukah Airport,Mukah,Kuching International Airport,Kuching,146.15,3 hrs 50 min
+New Mukah Airport,Mukah,Miri International Airport,Miri,372.91,13 hrs 45 min
+Sibu Airport,Sibu,Bintulu Airport,Bintulu,167.16,1 hr 10 min
+Sibu Airport,Sibu,Kuching International Airport,Kuching,184.95,1 hr 13 min
+Sibu Airport,Sibu,Limbang Airport,Limbang,446.8,5 hrs
+Sibu Airport,Sibu,Miri International Airport,Miri,335.71,1 hr 34 min
+Sibu Airport,Sibu,New Mukah Airport,Mukah,72.37,49 min
