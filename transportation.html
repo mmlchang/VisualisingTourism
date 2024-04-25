@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="Data Visualisation Group Project Transportation"/>
+  <meta name="keywords" content="HTML, CSS, JavaScript, D3"/>
+  <meta name="author" content="Jacklin Kho Jia Fen, Ida Lee Pei Xin"/>
+
+  <title>Transportation</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Baskervville' rel='stylesheet'>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://julian.com/research/velocity/build/jquery.velocity.min.js"></script>
+  <script src="http://julian.com/research/velocity/build/velocity.ui.js"></script>
+  <script src="script/logo.js"></script>
+  <script src="script/transportation.js"></script>
+</head>
+
+<body>
+  <!-- Website Logo and Animation Title -->
+  <!-- Animation title idea sourced from https://codepen.io/roseyrobertson/pen/pooNRVz -->
+  <div id="text-spot">
+    <img class="logo" src="images/logo.png" alt="Website_Logo">
+    <div id="inner-text"></div>
+    <p id="custom-text-form"></p>
+</div>
+
+<!-- Navigation Bar -->
+<!-- Navigation bar idea sourced from https://gist.github.com/CodeMyUI/c5eb164c63415ec0705a -->
+<div class="overlay-navigation">
+  <nav role="navigation">
+    <ul>
+      <li><a href="index.html" data-content="The beginning">Home</a></li>
+      <li><a href="sarawak_visitor.html" data-content="Whole World">Visitor Arrivals</a></li>
+      <li><a href="transportation.html" data-content="Sea, Land, Air">Transportation</a></li>
+      <li><a href="national_park.html" data-content="Foreign and Domestic Visitors">National Park</a></li>
+    </ul>
+  </nav>
+</div>
+
+<section class="home">
+  <div class="open-overlay">
+    <span class="bar-top"></span>
+    <span class="bar-middle"></span>
+    <span class="bar-bottom"></span>
+  </div>
+</section>
+
+<section class="map_and_sidebar">
+  <!-- Transportation Heading -->
+  <h1 id="Transportation_title">All Transportation</h1>
+
+  <!-- Brief Description (Instruction pop-up box) -->
+  <!-- Instruction pop-up box idea sourced from https://youtu.be/iE_6pQ3RlZU?si=IIR7mp5chsNUyQNg -->
+  <div class="popup" id="popup-1">
+    <div class="tips-overlay"></div>
+    <div class="tips-content tips-content2">
+      <div class="close-btn" onclick="togglePopup()">&times;</div>
+      <h1 class="instruction">Instruction</h1>
+      <div class="ins-content">
+        <p>&bull; The default mode is <span class="all_bck">All Transportation</span>, utilizing chord diagrams for data representation.</p>
+        <p>&bull; Hover over the chord diagram to reveal tooltips indicating the transportation choices for travel between divisions.</p>
+        <p>&bull; Upon switching between <span class="sea_bck">Sea</span>, <span class="land_bck">Land</span>, or <span class="air_bck">Air</span> transportation modes using radio buttons, icons representing ports <img class="port-icon" src="images/sea_icon.png" alt="Tips Image" weight="20" height="20">, divisions <img class="land-icon" src="images/land_icon.png" alt="Tips Image" weight="20" height="20">, or airports <img class="air-icon" src="images/air_icon.png" alt="Tips Image" weight="20" height="20"> will display on the Sarawak map.</p>
+        <p>&bull; Hover over these icons to view their respective names.</p>
+        <p>&bull; Clicking the first icon designates the departure point, while clicking the second indicates the destination. Both selections will be displayed at the sidebar.</p>
+        <p>&bull; Paths illustrate the route between the selected departure and destination.</p>
+        <p>&bull; After selecting two icons, a tooltip will appear, presenting the duration and distance of travel from the departure to the destination.</p>
+      </div>
+    </div>
+  </div>
+
+  <img class="tips-icon" src="images/tips_icon.png" alt="Tips Image" onclick="togglePopup()">
+
+  <!-- Tool Tip -->
+  <div id="transportationtooltip"></div>
+
+  <div id="transportation-info-box">
+    <p id="info-text"></p>
+  </div>
+
+  <!-- Display the chart above the footer -->
+  <p id="transportation_graph"></p>
+  <p id="transportation_chord_diagram"></p>
+
+  <!-- Side card (line with shadow) -->
+  <div id="side_card_holder">
+    <!-- Side card (container) -->
+    <div id="side_card_holder_container">
+      <input type="range" class="hidden_range_bar"/>
+      <h1 class="modes_title">Modes</h1>
+      <!-- Transportation modes boxes -->
+      <!-- Radio button ides sourced from https://codepen.io/josetxu/pen/BaOrPLP -->
+      <section class="transportation_boxes">
+        <input type="radio" name="signal" id="all"/>
+        <input type="radio" name="signal" id="sea"/>
+        <input type="radio" name="signal" id="land"/>
+        <input type="radio" name="signal" id="air"/>
+
+        <div class="content">
+          <label for="all" class="cuboid cuboid-all">
+            <div class="side">All</div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+          </label>
+          <label for="sea" class="cuboid cuboid-sea">
+            <div class="side">Sea</div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+          </label>
+          <label for="land" class="cuboid cuboid-land">
+            <div class="side">Land</div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+          </label>
+          <label for="air" class="cuboid cuboid-air">
+            <div class="side">Air</div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+            <div class="side"></div>
+          </label>
+        </div>
+      </section>
+
+      <!-- Dropdown list for Departure -->
+      <h1 class="departure_title" id="departure_title">Departure</h1>
+      <p id="departure_name"> - </p>
+      <h1 class="destination_title" id="destination_title">Destination</h1>
+      <p id="destination_name"> - </p>
+
+      <!-- Reset Button  -->
+      <!-- Reset button idea sourced from https://codepen.io/Mohammed-Hamza_Pakistan/pen/jOQyJrZ -->
+      <button id="resetButton"></button>
+
+      <script src="script/dropdown.js"></script>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

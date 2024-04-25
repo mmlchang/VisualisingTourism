@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="description" content="Data Visualisation Group Project Sarawak Visitor Arrivals"/>
+  <meta name="keywords" content="HTML, CSS, JavaScript, D3"/>
+  <meta name="author" content="Jacklin Kho Jia Fen, Ida Lee Pei Xin"/>
+
+  <title>Sarawak Visitor Arrivals</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Baskervville' rel='stylesheet'>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://julian.com/research/velocity/build/jquery.velocity.min.js"></script>
+  <script src="http://julian.com/research/velocity/build/velocity.ui.js"></script>
+  <script src="script/logo.js"></script>
+  <script src="script/sarawak_visitor.js"></script>
+</head>
+
+<body>
+  <!-- Website Logo and Animation Title -->
+  <!-- Animation title idea sourced from https://codepen.io/roseyrobertson/pen/pooNRVz -->
+  <div id="text-spot">
+    <img class="logo" src="images/logo.png" alt="Website_Logo">
+    <div id="inner-text"></div>
+    <p id="custom-text-form"></p>
+  </div>
+
+  <!-- Navigation Bar -->
+  <!-- Navigation bar idea sourced from https://gist.github.com/CodeMyUI/c5eb164c63415ec0705a -->
+  <div class="overlay-navigation">
+    <nav role="navigation">
+      <ul>
+        <li><a href="index.html" data-content="The beginning">Home</a></li>
+        <li><a href="sarawak_visitor.html" data-content="Whole World">Visitor Arrivals</a></li>
+        <li><a href="transportation.html" data-content="Sea, Land, Air">Transportation</a></li>
+        <li><a href="national_park.html" data-content="Foreign and Domestic Visitors">National Park</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <section class="home">
+    <div class="open-overlay">
+      <span class="bar-top"></span>
+      <span class="bar-middle"></span>
+      <span class="bar-bottom"></span>
+    </div>
+  </section>
+
+<section class="map_and_sidebar">
+  <!-- Sarawak Visitor Heading -->
+  <h1 id="Sarawak_visitor_title">Sarawak Visitor Arrivals 2018</h1>
+
+  <!-- Brief Description (Instruction pop-up box) -->
+  <!-- Instruction pop-up box idea sourced from https://youtu.be/iE_6pQ3RlZU?si=IIR7mp5chsNUyQNg -->
+  <div class="popup" id="popup-1">
+    <div class="tips-overlay"></div>
+    <div class="tips-content">
+      <div class="close-btn" onclick="togglePopup()">&times;</div>
+      <h1 class="instruction">Instruction</h1>
+      <div class="ins-content">
+        <p>&bull; Adjust the year range bar to switch datasets between 2018 and 2022.</p>
+        <p>&bull; Utilize the clickable dropdown menus for countries and months; upon selection, click the "GO" button.</p>
+        <p>&bull; Path colors denote number of visitor arrivals: <span class="green_bck">green</span> for low, <span class="yellow_bck">yellow</span> for medium, and <span class="red_bck">red</span> for high.</p>
+        <p>&bull; Click on map data points to reveal tooltips displaying country names and visitor numbers.</p>
+        <p>&bull; Zoom functionality is available for clearer map views of data points.</p>
+        <p>&bull; "Grand Total for Domestic and Foreign Visitors" is situated at the webpage's bottom-right, this feature is accessible only when "all countries" are selected along with any other month.</p>
+      </div>
+    </div>
+  </div>
+
+  <img class="tips-icon" src="images/tips_icon.png" alt="Tips Image" onclick="togglePopup()">
+
+  <div id="info-box"></div>
+
+  <!-- Display the chart above the footer -->
+  <p id="sarawak_visitor_graph"></p>
+
+  <!-- Side card (line with shadow) -->
+  <div id="side_card_holder">
+    <!-- Side card (container) -->
+    <div id="side_card_holder_container">
+      <!-- Year range slider -->
+      <!-- Year range slider idea from https://codepen.io/anthorr/pen/poZJVmY -->
+      <section class="year_rangeWrap">
+        <input type="range" list="ticks" step="25" value="0"/>
+        <datalist id="year_ticks">
+          <option value="0" label="2018" data-csv="Sarawak_Visitor_Arrivals_2018.csv"></option>
+          <option value="25" label="2019" data-csv="Sarawak_Visitor_Arrivals_2019.csv"></option>
+          <option value="50" label="2020" data-csv="Sarawak_Visitor_Arrivals_2020.csv"></option>
+          <option value="75" label="2021" data-csv="Sarawak_Visitor_Arrivals_2021.csv"></option>
+          <option value="100" label="2022" data-csv="Sarawak_Visitor_Arrivals_2022.csv"></option>
+        </datalist>
+      </section>
+
+      <!-- Dropdown list for Countries -->
+      <div class="countries_drop">
+        <div class="countries_options-container"> <!-- Wrap the options in a container -->
+          <div class="countries_option active" data-value="Citizenship">
+            All countries
+          </div>
+          <div class="countries_option" data-value="Arabs">
+            Arabs
+          </div>
+          <div class="countries_option" data-value="Australia">
+            Australia
+          </div>
+          <div class="countries_option" data-value="Bangladesh">
+            Bangladesh
+          </div>
+          <div class="countries_option" data-value="Belgium">
+            Belgium
+          </div>
+          <div class="countries_option" data-value="Brunei"> 
+            Brunei
+          </div>
+          <div class="countries_option" data-value="Canada">
+            Canada
+          </div>
+          <div class="countries_option" data-value="China">
+            China
+          </div>
+          <div class="countries_option" data-value="Europe">
+            Europe
+          </div>
+          <div class="countries_option" data-value="France">
+            France
+          </div>
+          <div class="countries_option" data-value="Germany"> 
+            Germany
+          </div>
+          <div class="countries_option" data-value="Hong Kong"> 
+            Hong Kong
+          </div>
+          <div class="countries_option" data-value="India">
+            India
+          </div>
+          <div class="countries_option" data-value="Indonesia">
+            Indonesia
+          </div>
+          <div class="countries_option" data-value="Japan">
+            Japan
+          </div>
+          <div class="countries_option" data-value="Latin America">
+            Latin America
+          </div>
+          <div class="countries_option" data-value="New Zealand"> 
+            New Zealand
+          </div>
+          <div class="countries_option" data-value="Norway"> 
+            Norway
+          </div>
+          <div class="countries_option" data-value="Pakistan">
+            Pakistan
+          </div>
+          <div class="countries_option" data-value="Peninsular Malaysia">
+            Peninsular Malaysia
+          </div>
+          <div class="countries_option" data-value="Philippines">
+            Philippines
+          </div>
+          <div class="countries_option" data-value="Russia"> 
+            Russia
+          </div>
+          <div class="countries_option" data-value="Sabah"> 
+            Sabah
+          </div>
+          <div class="countries_option" data-value="Singapore">
+            Singapore
+          </div>
+          <div class="countries_option" data-value="South Korea">
+            South Korea
+          </div>
+          <div class="countries_option" data-value="Sri Lanka">
+            Sri Lanka
+          </div>
+          <div class="countries_option" data-value="Taiwan">
+            Taiwan
+          </div>
+          <div class="countries_option" data-value="Thailand"> 
+            Thailand
+          </div>
+          <div class="countries_option" data-value="United Kingdom">
+            United Kingdom
+          </div>
+          <div class="countries_option" data-value="USA"> 
+            USA
+          </div>
+        </div>
+        <div class="dropdown-arrow">▼</div>
+      </div>
+
+      <!-- Dropdown list for Months -->
+      <div class="months_drop">
+        <div class="months_options-container"> <!-- Wrap the options in a container -->
+          <div class="month_option active" data-value="G. Total">
+            All Months
+          </div>
+          <div class="month_option" data-value="Jan">
+            January
+          </div>
+          <div class="month_option" data-value="Feb">
+            February
+          </div>
+          <div class="month_option" data-value="Mar">
+            March
+          </div>
+          <div class="month_option" data-value="Apr">
+            April
+          </div>
+          <div class="month_option" data-value="May"> 
+            May
+          </div>
+          <div class="month_option" data-value="Jun">
+            June
+          </div>
+          <div class="month_option" data-value="Jul">
+            July
+          </div>
+          <div class="month_option" data-value="Aug">
+            August
+          </div>
+          <div class="month_option" data-value="Sep">
+            September
+          </div>
+          <div class="month_option" data-value="Oct"> 
+            October
+          </div>
+          <div class="month_option" data-value="Nov"> 
+            November
+          </div>
+          <div class="month_option" data-value="Dec">
+            December
+          </div>
+        </div>
+        <div class="monthdropdown-arrow">▼</div>
+      </div>
+
+      <!-- Go Button  -->
+      <!-- Go button idea sourced from https://codepen.io/Mohammed-Hamza_Pakistan/pen/jOQyJrZ -->
+      <button id="goButton"></button>
+
+      <!-- Grand Total -->
+      <div class="grand_total_arrivals">
+        <p class="grand_total_text"> Grand Total (Domestic + Foreign)</p>
+        <h1 class="grand_total_arrivals_value">4,430,921</h1>
+      </div>
+
+      <script src="script/dropdown.js"></script>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
